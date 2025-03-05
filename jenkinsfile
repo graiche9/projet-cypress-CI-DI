@@ -20,19 +20,11 @@ pipeline {
         stage('Run Cypress Tests - login') {
             steps {
                 script {
-                    sh 'npx cypress run --env grep="@login"'
+                    sh 'npx cypress run --env grep=@login'
                 }
             }
         }
-/*
-        stage('Run Cypress Tests') {
-            steps {
-                script {
-                    sh 'npx cypress run'
-                }
-            }
-        }
-*/
+
     }
 
     post {
