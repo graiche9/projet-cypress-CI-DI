@@ -2,6 +2,7 @@ pipeline {
     agent {
         any {
             image 'cypress/browsers'
+            args '--entrypoint=""'
         }
     }
 
