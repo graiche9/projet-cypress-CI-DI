@@ -23,7 +23,8 @@ pipeline {
                 }
             }
         }
-
+    }
+    
     post {
         always {
             echo "Génération des rapports"
@@ -31,6 +32,6 @@ pipeline {
         }
     }
 
-    }
+    
 
 }
