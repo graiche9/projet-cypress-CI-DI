@@ -29,7 +29,7 @@ pipeline {
         always {
             echo "Génération des rapports"
             //archiveArtifacts artifacts: 'cypress/reports/**/*.*', fingerprint: true
-            Junit "cypress/results/**/*.*"
+            Junit "results/**/*.*"
         }
     }
 }
