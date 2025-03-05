@@ -24,12 +24,14 @@ pipeline {
             }
         }
 
-        post ('gererations des rapport ')
-        always {
-        
-        archiveArtifacts artifacts: 'cypress/reports/**/*.*', fingerprint:true
+        post ('gererations des rapport '){
 
+        always {
+        archiveArtifacts artifacts: 'cypress/reports/**/*.*', fingerprint:true
+        }  
+          
         }
+
 
     }
 
