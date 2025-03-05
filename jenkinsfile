@@ -27,8 +27,6 @@ pipeline {
 
     post {
         always {
-            echo "Génération des rapports"
-            //archiveArtifacts artifacts: 'cypress/reports/**/*.*', fingerprint: true
             Junit "results/**/*.xml"
         }
     }
