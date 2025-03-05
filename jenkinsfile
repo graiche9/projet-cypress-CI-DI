@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+        Cypress{
+            image 'cypress/browsers'
+        }
+    }
+
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Run Cypress Tests') {
+            steps {
+                script {
+                    sh 'npx cypress run'
+                }
+            }
+        }
+
+    }
+
+}
