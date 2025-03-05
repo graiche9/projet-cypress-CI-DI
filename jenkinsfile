@@ -18,7 +18,7 @@ pipeline {
 
         stage('Run Cypress Tests - login') {
             steps {
-                sh 'npx cypress run --env grep=@login"'
+                    sh "npx cypress run --env grep=@login --reporter junit --reporter-options mochaFile=results/login-test.xml"
             }
         }
 /*
