@@ -5,6 +5,9 @@ pipeline {
             args '--entrypoint=""'
         }
     }
+    environment {
+        CYPRESS_grep = '@login'  
+    }
 
     stages {
 
@@ -16,9 +19,11 @@ pipeline {
             }
         }
 
-        stage('Run Cypress Tests - login') {
+        stage('Run Cypress Tests - Target @login tests') {
             steps {
-                    sh "npx cypress run --env grep=@login --reporter junit --reporter-options mochaFile=results/login-test.xml"
+                script {
+                    sh 'npx cypress run --env grep=${CYPRESS_grep}'
+                }
             }
         }
 /*
@@ -34,7 +39,7 @@ pipeline {
 
     post {
         always {
-            junit 'results/login-test.xml'
+            junit '**/results/**/*.xml'
         }
     }
 }
