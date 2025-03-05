@@ -12,17 +12,17 @@ describe('login scenario', () => {
     beforeEach('acces url', ()=>{
       cy.visit('https://www.saucedemo.com/')
     })
-    it('correct user and wrong pass @negative @login', () => {
+    it('correct user and wrong pass @negative', () => {
       loginPage.login("standard_user", "secret_sauce1")
       cy.get('[data-test=error]').should("be.visible")
     }),
 
-    it('wrong user and correct pass @negative @login', () => {
+    it('wrong user and correct pass @negative ', () => {
       loginPage.login("standard_user1", "secret_sauce")
       cy.get('[data-test=error]').should("be.visible")
     }),
 
-    it('wrong user and wrong pass@negative @login', () => {
+    it('wrong user and wrong pass @negative ', () => {
       loginPage.login("standard_user1", "secret_sauce1")
       cy.get('[data-test=error]').should("be.visible")
     })
