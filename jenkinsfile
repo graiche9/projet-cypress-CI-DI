@@ -1,12 +1,13 @@
 pipeline {
     agent {
-        any {
+        docker {
             image 'cypress/browsers'
             args '--entrypoint=""'
         }
     }
 
     stages {
+
         stage('Install Dependencies') {
             steps {
                 script {
