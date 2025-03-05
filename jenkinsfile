@@ -24,12 +24,10 @@ pipeline {
             }
         }
 
-        stage ('generate repport ')
-        steps {
-
-            sh 'mochawesome-merge cypress/results/*.json > cypress/results/report.json'
-            sh 'mochawesome-report-generator cypress/results/report.json'
-            archiveArtifacts artifacts: 'cypress/results/*.html', allowEmptyArchive: true
+        post ('gererations des rapport ')
+        always {
+        
+        archiveArtifacts artifacts: 'cypress/reports/**/*.*', fingerprint:true
 
         }
 
