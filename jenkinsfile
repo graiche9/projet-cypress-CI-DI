@@ -24,14 +24,12 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             echo "Génération des rapports"
-            archiveArtifacts artifacts: 'cypress/reports/**/*.*', fingerprint: true
+            //archiveArtifacts artifacts: 'cypress/reports/**/*.*', fingerprint: true
+            Junit "cypress/results/**/*.*"
         }
     }
-
-    
-
 }

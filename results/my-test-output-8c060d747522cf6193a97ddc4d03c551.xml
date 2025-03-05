@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.333" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-03-05T12:42:32" tests="0" file="cypress\e2e\tri_az.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Test Tri" timestamp="2025-03-05T12:42:32" tests="2" time="6.323" failures="0">
+    <testcase name="Test Tri Tri Alphabétique A-Z" time="2.313" classname="Tri Alphabétique A-Z">
+    </testcase>
+    <testcase name="Test Tri Tri Alphabétique Z-A" time="1.496" classname="Tri Alphabétique Z-A">
+    </testcase>
+  </testsuite>
+</testsuites>
